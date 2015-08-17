@@ -39,9 +39,9 @@ begin
     insert into course(course_name,start_time,end_time,day) values('食品','15:00','18:00','周五');
     insert into course(course_name,start_time,end_time,day) values('营销','15:00','18:00','周六');
     insert into course(course_name,start_time,end_time,day) values('管理','15:00','18:00','周一');
-    insert into course(course_name,start_time,end_time,day) values('计算机','15:00','18:00','周二');
-    insert into course(course_name,start_time,end_time,day) values('世界史','15:00','18:00','周三');
-    insert into course(course_name,start_time,end_time,day) values('经济学','15:00','18:00','周四');
+    insert into course(course_name,start_time,end_time,day) values('电脑','15:00','18:00','周二');
+    insert into course(course_name,start_time,end_time,day) values('历史','15:00','18:00','周三');
+    insert into course(course_name,start_time,end_time,day) values('经济','15:00','18:00','周四');
 end;
 CREATE PROCEDURE insert_schedule()
 begin
@@ -49,7 +49,7 @@ declare a int;
 declare b int;
 set a=1;
 set b=1;
-while a<50 do
+while a<101 do
     insert into schedule(student_id,course_id) values(a,b);
     insert into schedule(student_id,course_id) values(a,b+1);
     insert into schedule(student_id,course_id) values(a,b+2);
