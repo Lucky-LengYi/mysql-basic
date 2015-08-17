@@ -4,7 +4,7 @@ use TWDemo;
 
 CREATE TABLE class
 (
-    class_id int not null,
+    class_id int not null auto_increment,
     class_name varchar(20) not null,
     college varchar(20) not null,
     department varchar(20) not null,
@@ -13,7 +13,7 @@ CREATE TABLE class
 
 CREATE TABLE student
 (
-    student_id int not null,
+    student_id int not null auto_increment,
     name varchar(20) not null,
     sex varchar(20) not null,
     class_id int not null,
@@ -23,7 +23,7 @@ CREATE TABLE student
 
 CREATE TABLE course
 (
-    course_id int not null,
+    course_id int not null auto_increment,
     course_name varchar(20) not null,
     start_time varchar(20) not null,
     end_time varchar(20) not null,
@@ -34,8 +34,8 @@ CREATE TABLE course
 CREATE TABLE schedule
 (
     student_id int not null,
-    course_id int not null,
-    PRIMARY KEY (course_id),
+    course_id int not null ,
+    PRIMARY KEY (student_id,course_id),
     FOREIGN KEY (student_id)  REFERENCES student(student_id),
     FOREIGN KEY (course_id)  REFERENCES course(course_id)
 );
